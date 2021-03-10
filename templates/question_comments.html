@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+{% block content %}
+    <br ><br ><br ><br >
+    <footer>
+    <div class="button">
+    <a href="{{ url_for('add_question_comment', question_id=question_id) }}" >Add a comment</a > </div> </footer>
+    {% for comment in comments %}
+        <p>{{ comment['message'] }}</p>
+        <p>{{ comment['submission_time'] }}</p>
+        <p>{{ comment['edited_count'] }}</p>
+    {% endfor %}
+    <footer>
+    <div class="button">
+    <a href="/question/{{ question_id }}">Back</a>
+    </div> </footer>
+
+{% endblock %}

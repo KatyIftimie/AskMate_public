@@ -1,0 +1,113 @@
+body {
+    background: url(https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png);
+}
+
+
+#question_container{
+    text-align: center;
+    color: navy;
+    background-color: #86989B;
+}
+
+nav {
+    z-index: 10;
+    margin-left: -10px;
+
+}
+
+nav > ul {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav > ul > li {
+    float: left;
+    border-right: 1px solid #bbb;
+
+}
+
+
+
+nav > ul > li > a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav > ul > li > a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #3A7734;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+}
+
+footer > div {
+    display: flex;
+    background-color: #3A7734;
+}
+
+header {
+    display: flex;
+
+}
+
+#question_info{
+    display: flex;
+    flex-direction: row;
+    float: right;
+}
+
+#question_info > div {
+    margin: 10px 20px 10px 20px;
+}
+
+.box {
+    border-style: solid ;
+    border-color: #86989B;
+    border-width: 2px;
+    text-align: center;
+    margin: 20px 10px 20px 10px;
+}
+
+.button {
+    border-radius: 30px;
+    display: flex;
+    margin: 10px;
+    width: 150px;
+    box-shadow: #555555 3px 3px;
+
+}
+
+.button > a {
+    text-decoration: none;
+    font-family: "Comic Sans MS";
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: ;
+}
+
+.button > a:hover {
+    color: #9C1A1C;
+
+}
+
+.button:hover {
+    transform: scale(1.2);
+    background-color: #177199;
+}

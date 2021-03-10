@@ -1,0 +1,10 @@
+{% extends "template.html" %}
+{% block content %}
+    {% for question in questions %}
+        <h2>{{ question['title'] }}</h2>
+    {% endfor %}
+
+    {% for answer in answers %}
+        <h2>{{ answer }}</h2>
+    {% endfor %}
+{% endblock %}

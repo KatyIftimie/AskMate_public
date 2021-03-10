@@ -1,0 +1,38 @@
+{% extends "template.html" %}
+{% block content %}
+    <br><br><br>
+<body>
+    {% if change_route_variable == 'answer_comment' %}
+        <form action="{{ url_for('add_answer_comment', answer_id = answer_id) }}" method="post">
+            <label for="message"> Add new comment </label> <br>
+        <textarea name="message" required></textarea> <br>
+
+        <input type='submit' class="button" value="Submit">
+        </form>  <footer> <div class="button"> <a href="/answer/{{ answer_id }}/comments">Back</a> </div> </footer>
+    {% elif  change_route_variable == 'question_comment'%}
+         <form action="{{ url_for('add_question_comment', question_id = question_id) }}" method="post">
+            <label for="message"> Add new comment </label> <br>
+        <textarea name="message" required></textarea> <br>
+             <input type='submit' class="button" value="Submit">
+         </form> <footer> <div class="button"><a href="/question/{{ question_id }}">Back</a>  </div> </footer>
+    {% elif  change_route_variable == 'question' %}
+        <form action="{{ 'add_question' }}" method="post">
+        <label for='title'> Title </label> <br>
+        <textarea name="title"></textarea> <br>
+         <label for='message'> Message </label> <br>
+        <textarea name="message"></textarea> <br>
+        <input type='submit' class="button" value="Submit">
+        </form> <footer> <div class="button"> <a href="/list">Back</a></p> </div> </footer>
+    {% elif  change_route_variable == 'answer' %}
+         <form action="{{ url_for('add_answer', question_id = question_id) }}" method="post">
+            <label for="message"> Message </label> <br>
+         <textarea name="message" required></textarea> <br>
+         <input type='submit' class="button" value="Submit">
+         </form> <footer> <div class="button"> <a href="/question/{{ question_id }}">Back</a> </div> </footer>
+    {% endif %}
+
+</body>
+{% endblock %}
+
+
+

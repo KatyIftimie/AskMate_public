@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head >
+    <meta charset="UTF-8" >
+    <title > {{title if title else "Main"}} </title >
+    <link rel="stylesheet" href= {{ url_for("static", filename="style.css") }}>
+    <link rel="icon" type="image/png" href="/static/favicon.ico">
+</head >
+<header>
+    <nav id="navbar">
+        <ul id="navbar_list">
+            <li  style="float: right" ><a href="#" >About</a></li>
+            <li><a class="active" href="/">Main</a></li>
+            <li><a href="/add_question">Add question</a></li>
+            <li><a href="/list">See All Questions</a></li>
+            <li><a href="#">Element 3</a></li>
+        </ul>
+    </nav>
+</header>
+<body style="padding-top:30px;">
+    {% block content %}
+    {% endblock %}
+</body >
+</html >

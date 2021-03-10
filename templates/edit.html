@@ -1,0 +1,17 @@
+{%extends 'template.html' %}
+{% block content %}
+    <br/><br/><br/>
+    <form action="{{ url_for('edit_question', question_id=question_content['id']) }}" method="POST">
+        <input name='image' id='image' type="hidden" value="{{ question_content['image'] }}">
+        <label for="title" >Question title</label><br>
+        <textarea  name="title" id="title" required>{{ question_content['title'] }}</textarea><br>
+        <label for="message">Question details</label><br>
+        <textarea name="message" id="message" rows="8" cols="55" required>{{ question_content['message'] }}</textarea><br>
+        <footer>   <input type="submit" value="Submit" class="button"> </footer>
+
+    </form>
+
+    <button type="button" class="button">Add image</button>
+    <footer>
+    <a href="/list"> <button type="submit" class="button">Go home</button> </a> </footer>
+{% endblock content %}

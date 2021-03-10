@@ -1,0 +1,45 @@
+{% extends "template.html" %}
+{% block content %}
+    <div class="box" xmlns="http://www.w3.org/1999/html">
+    <header>
+
+        <h2>Question Title: {{ question['title'] }}</h2>
+        <div id="question_info">
+            <div>Submission time: {{ question['submission_time'] }} </div>
+            <div>Views: {{ question['view_number'] }}</div>
+            <div>Votes: {{ question['vote_number'] }}</div>
+            <img src="{{ question['image'] if question['image'] }}" alt="" >
+        </div>
+    </header>
+        <h3>Question Message: {{ question['message'] }}</h3>
+        <footer>
+            <div class="button">
+                <a href="/question/{{ question['id'] }}/comments">See comments</a >
+            </div>
+            <div class="button">
+                <a href="/question/{{ question['id'] }}/new_answer"> Add answer </a>
+            </div>
+            <div class="button">
+                <a href="/question/{{ question['id'] }}/edit">Edit question</a>
+            </div>
+        </footer>
+    </div>
+    <hr>
+    <div clas="box">
+        {% for answer in answers %}
+            <hr >
+            <p>Submission time: {{ answer['submission_time'] }} | Views: {{ answer['view_number'] }}</p>
+            <p>Votes: {{ answer['vote_number'] }}</p>
+            <img src="{{ answer['image'] if answer['image'] }}" alt="" >
+            <h2>Answer: {{ answer['message'] }}</h2><br >
+            <footer>
+                <div class="button">
+                    <a href="/answer/{{ answer['id'] }}/comments">See comments</a >
+                </div>
+                <div class="button">
+                    <a href="/delete/{{ answer['id'] }}/answer">Delete answer</a>
+                </div>
+            </footer>
+        {% endfor %}
+    </div>
+{% endblock %}

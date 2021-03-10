@@ -1,0 +1,35 @@
+{% extends "template.html" %}
+{% block content %}
+    {% for question in questions %}
+        <header>
+            <div id="question_title">
+                <h2><a href="/question/{{ question['id'] }}">{{ question['title']}}</a></h2>
+            </div>
+            <div id="question_info">
+                <div>{{ question['submission_time'] }}</div>
+                <div>{{ question['view_number'] }}</div>
+                <div>{{ question['vote_number'] }}</div>
+            </div>
+        </header>
+        <article id="question-message">
+            <p>{{ question['message'] }}</p>
+        </article>
+    {% endfor %}
+        {% if answers %}
+    <h2>Answers</h2>
+    {% endif %}
+        {% for answer in answers %}
+        <header>
+            <div id="answer_info">
+                <div>{{ answer['submission_time'] }}</div>
+                <div>{{ answer['vote_number'] }}</div>
+            </div>
+        </header>
+        <article id="question-message">
+            <p>{{ answer['message'] }}</p>
+        </article>
+    {% endfor %}
+    <footer>
+    <div class="button">
+   <a href="/">Back to home</a>  </div> </footer>
+{% endblock %}

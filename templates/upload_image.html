@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head >
+    <meta charset="UTF-8" >
+    <title >Title</title >
+</head >
+<body >
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <h1>Upload Image</h1>
+            <hr >
+
+            <form action="/{{ table }}/upload-image" method="POST" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label>Select Image</label >
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="image" id="image" >
+                        <label class="custom-file-input" for="image" >Select image...</label >
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Upload..</button>
+            </form >
+        </div>
+    </div>
+</div>
+
+</body >
+</html >
